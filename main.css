@@ -1,0 +1,76 @@
+:root {
+    --background-color: #e0aaff;
+    --text-color: blue;
+    --highlight: #6C007F;
+    --highlight2:#B000CF;
+    --shadow:rgba(108, 0, 127, 1);
+}
+
+body {
+    margin:0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--background-color);
+}
+
+h1{
+    font-family: 'Elms Sans';
+    color: var(--shadow);
+}
+
+.ball {
+   display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    height: 80vw;
+    background:  radial-gradient(circle,rgba(176, 0, 207, 1) 0%, rgba(108, 0, 127, 1) 30%, rgba(0, 0, 0, 1) 100%);
+    color: var(--text-color);
+    border-radius: 100%; 
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.answer {
+    color: black;
+    font-size: 2em;
+    border-radius: 100%;
+    width: 7em;
+    height: 7em;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+}
+
+.answer span {
+   transition: color 2s;
+   color: var(--background-color);
+}
+
+.fade {
+  animation: opacityanimation 1s ease-in;
+}
+
+/* @keyframes floating {
+  from {
+    transform: rotateZ(0) rotateY(15deg) translateZ(6.8vmin) rotateZ(0);
+  }
+  to {
+    transform: rotateZ(1turn) rotateY(15deg) translateZ(6.8vmin) rotateZ(-1turn);
+  }
+} */
+  @keyframes opacityanimation {
+    from {
+        opacity: 0;
+  }
+  to {
+    opacity:1
+  }
+}
