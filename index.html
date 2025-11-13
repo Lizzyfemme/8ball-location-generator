@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>8-sided Word Die</title>
+  <link rel="stylesheet" href="main.css" />
+</head>
+<body>
+  <main>
+    <div class="die" id="die" role="status" aria-live="polite">
+      <span class="label" id="location">—</span>
+    </div>
+
+    <button id="getRandomLocation" type="button">Where are you going?</button>
+  </main>
+
+  <script>
+    function getRandomLocation() {
+      const rand = Math.random() * 100;
+      if (rand < 50) return "Art Class";
+      else if (rand < 65) return "Office";
+      else if (rand < 75) return "Cafeteria";
+      else if (rand < 80) return "Great Hall";
+      else if (rand < 90) return "Staff Washroom";
+      else if (rand < 95) return "Art Storage Closet";
+      else return "Staffroom";
+    }
+
+    function showRandomLocation() {
+      const label = document.getElementById("location");
+      const die = document.getElementById("die");
+      label.textContent = getRandomLocation();
+
+
+    }
+  document.getElementById("getRandomLocation")
+            .addEventListener("click", showRandomLocation);
+     </script>
+</body>
+</html>
